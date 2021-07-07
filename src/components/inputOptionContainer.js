@@ -1,8 +1,8 @@
-function InputOptionContainer({category, items, isOpen, onClick}){
+function InputOptionContainer({title, items, isOpen}){
   return (
     <div 
       className={"input-option" + (isOpen ? "" : " hidden")}>
-      <h3>{category}</h3>
+      <h3>{title}</h3>
     </div>
   );
 }
