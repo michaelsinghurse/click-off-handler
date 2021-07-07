@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import InputBar from './components/inputBar';
 import OrderDisplay from './components/orderDisplay';

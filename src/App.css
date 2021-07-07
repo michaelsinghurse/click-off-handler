@@ -13,3 +13,46 @@
   color: white;
 }
 
+.input-bar {
+  border: 1px solid red;
+  display: flex;
+  margin: 40px auto;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.input-select,
+.input-submit {
+  border: 1px solid green;
+  font-size: 24px;
+  padding: 30px 20px;
+  flex: 1 200px;
+  max-width: 200px;
+}
+
+.input-select:hover,
+.input-submit:hover {
+  cursor: pointer;
+}
+
+.input-select::after {
+  content: "\25BC";
+  margin-left: 20px;
+}
+
+.input-submit {
+  background-color: green;
+  color: white;
+}
+
+.input-option {
+  position: absolute;
+  border: 1px solid blue;
+  top: 100px;
+  width: 600px;
+}
+
+.hidden {
+  display: none;
+}

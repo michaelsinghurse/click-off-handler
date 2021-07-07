@@ -1,4 +1,4 @@
-import Input from './input';
+import InputSelect from './inputSelect';
 import SubmitButton from './submitButton';
 
 const inputs = [
@@ -31,7 +31,7 @@ const inputs = [
 function InputBar(props){
   const inputElements = inputs.map((input, idx) => {
     return (
-      <Input 
+      <InputSelect 
         key={idx} 
         category={input.category} 
         items={input.items}
