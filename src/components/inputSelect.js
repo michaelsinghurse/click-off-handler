@@ -1,16 +1,19 @@
 import InputOptionContainer from './inputOptionContainer';
 
-function InputSelect({category, items, isOpen, onClick}){
+function InputSelect({category, items, isOpen, onClick, order, setOrder}){
+  const selected = order.hasOwnProperty(category) && !!order[category]; 
   return (
     <div 
-      className="input-select"
+      className={"input-select " + (selected ? " selected" : "")}
       onClick={onClick}
     >
       {category}
       <InputOptionContainer 
-        title={`Please select a ${category.toLowerCase().slice(0, -1)}`}
+        category={category}
         items={items}
         isOpen={isOpen}
+        order={order}
+        setOrder={setOrder}
       />
     </div>
   );

@@ -14,7 +14,6 @@
 }
 
 .input-bar {
-  border: 1px solid red;
   display: flex;
   margin: 40px auto;
   align-items: center;
@@ -25,10 +24,11 @@
 .input-select,
 .input-submit {
   box-sizing: border-box;
-  border: 1px solid green;
+  border: 1px solid black;
   font-size: 24px;
   padding: 30px 20px;
-  flex: 1 200px;
+  /*flex: 1 200px;*/
+  min-width: 200px;
   max-width: 200px;
 }
 
@@ -47,13 +47,6 @@
   color: white;
 }
 
-.input-option {
-  position: absolute;
-  border: 1px solid blue;
-  top: 100px;
-  width: 600px;
-}
-
 .input-select:nth-child(1) .input-option {
   margin-left: -20px;
 }
@@ -66,6 +59,69 @@
   margin-left: -420px;
 }
 
+.input-option {
+  box-sizing: border-box;
+  position: absolute;
+  border: 1px solid gray;
+  top: 100px;
+  width: 600px;
+  padding: 5px;
+  cursor: auto;
+}
+
+.input-option h3 {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.input-option ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.input-option li {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  text-align: left;
+  padding: 10px 5px;
+}
+
+.selected::before {
+  content: "\2713";
+  font-size: 24px;
+  font-weight: 600;
+  margin-right: 5px;
+  color: green;
+}
+
+.input-option li:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.order-display {
+  width: 800px;
+  box-sizing: border-box;
+  padding: 20px 0px;
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+}
+
 .hidden {
   display: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

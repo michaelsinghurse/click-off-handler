@@ -1,7 +1,7 @@
 import InputSelect from './inputSelect';
 import SubmitButton from './submitButton';
 
-function InputBar({menuItems, openInput, setOpenInput}){
+function InputBar({menuItems, openInput, setOpenInput, order, setOrder, onSubmit}){
   const handleOnClick = category => {
     if (openInput === category) {
       setOpenInput('');
@@ -18,6 +18,8 @@ function InputBar({menuItems, openInput, setOpenInput}){
         items={menuItem.items}
         isOpen={openInput === menuItem.category}
         onClick={() => handleOnClick(menuItem.category)} 
+        order={order}
+        setOrder={setOrder}
       />
     ); 
   });
@@ -26,8 +28,9 @@ function InputBar({menuItems, openInput, setOpenInput}){
     <div className="input-bar">
       {inputElements}
       <SubmitButton 
-        onClick={() => {
+        onSubmit={() => {
           setOpenInput('');
+          onSubmit();
         }}
       />
     </div>

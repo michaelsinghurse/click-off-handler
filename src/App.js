@@ -11,8 +11,24 @@ function App() {
     }, 500);
   }, []);
   
-  const [openInput, setOpenInput] = useState('');
+  const [order, setOrder] = useState({});
 
+  const [hasOrdered, setHasOrdered] = useState(false);
+
+  const [openInput, setOpenInput] = useState('');
+  
+  const onSubmit = () => {
+    const missing = menu
+      .map(item => item.category)
+      .filter(category => !order[category]);
+
+    if (missing.length > 0) {
+      alert('Please select an entree, side, and drink before ordering!');
+    } else {
+      setHasOrdered(true);
+    }
+  };
+ 
   return (
     <div className="App">
       <header className="App-header">
@@ -23,8 +39,19 @@ function App() {
           menuItems={menu}
           openInput={openInput}
           setOpenInput={setOpenInput}
+          order={order}
+          setOrder={setOrder}
+          onSubmit={onSubmit}
         />
-        <OrderDisplay/>
+        {hasOrdered && 
+          <OrderDisplay 
+            order={order}
+            resetOrder={() => {
+              setHasOrdered(false);
+              setOrder({});
+            }}
+          />
+        }
       </main>
     </div>
   );
@@ -52,7 +79,7 @@ const menuApiResponse = [
     items: [
       { id: '307', name: 'Beer', price: 4.99 },
       { id: '308', name: 'Soda', price: 1.99 },
-      { id: '309', name: 'Red Wine', price: 0.00 },
+      { id: '309', name: 'Red Wine', price: 5.99 },
     ]
   },
 ];
