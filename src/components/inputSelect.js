@@ -1,6 +1,8 @@
 import InputOptionContainer from './inputOptionContainer';
 
-function InputSelect({category, items, isOpen, onClick, order, setOrder}){
+function InputSelect({
+  category, items, isOpen, onClick, order, setOrder, setOpenInput
+}){
   const selected = order.hasOwnProperty(category) && !!order[category]; 
   return (
     <div 
@@ -14,6 +16,7 @@ function InputSelect({category, items, isOpen, onClick, order, setOrder}){
         isOpen={isOpen}
         order={order}
         setOrder={setOrder}
+        setOpenInput={setOpenInput}
       />
     </div>
   );

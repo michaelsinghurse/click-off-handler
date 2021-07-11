@@ -20,6 +20,7 @@ function InputBar({menuItems, openInput, setOpenInput, order, setOrder, onSubmit
         onClick={() => handleOnClick(menuItem.category)} 
         order={order}
         setOrder={setOrder}
+        setOpenInput={setOpenInput}
       />
     ); 
   });
